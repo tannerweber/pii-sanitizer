@@ -19,7 +19,11 @@ for original_text in inputs:
 
     orginal_doc = nlp(original_text)
     anonymized_doc = nlp(anonymized_text)
+    sim_scores = []
+    sim_scores.append(orginal_doc.similarity(anonymized_doc))
 
     print(f"Original: {original_text}")
     print(f"Anonymized: {anonymized_text}")
-    print(f"Similarity Score: {orginal_doc.similarity(anonymized_doc)} \n")
+    print(f"Similarity Score: {(orginal_doc.similarity(anonymized_doc)):.3f} \n")
+
+print(f"Average Similarity Score: {(sum(sim_scores) / len(sim_scores)):.3f}")
