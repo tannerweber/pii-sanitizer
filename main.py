@@ -3,6 +3,38 @@ from presidio_anonymizer.entities import RecognizerResult, OperatorConfig
 from presidio_analyzer import AnalyzerEngine
 import sys
 
+# Checks for prepositions relating to fixed times and adds one where needed to maintain grammatical correctness
+def get_time_augment(result, text):
+
+    if result.start == 0:
+        return "At "
+    elif result.start < 3:
+        return "at "
+    elif text[result.start - 2] == '.':
+        return "At "
+    elif result.start == 3 and text[result.start - 3:result.start - 1].strip().lower() in ("in", "on", "at", "of"):
+        return ""
+    elif result.start < 4:
+        return "at "
+    elif text[result.start - 4:result.start - 1].strip().lower() in ("in", "on", "at", "of"):
+        return ""
+    elif result.start < 6:
+        return "at "
+    elif result.start == 6 and text[result.start - 6:result.start - 1].strip().lower() == "after":
+        return ""
+    elif result.start < 7:
+        return "at "
+    elif text[result.start - 7:result.start - 1].strip().lower() == "after":
+        return ""
+    elif result.start == 7 and text[result.start - 7:result.start - 1].strip().lower() in ("after", "before", "during"):
+        return ""
+    elif result.start < 8:
+        return "at "
+    elif text[result.start - 8:result.start - 1].strip().lower() in ("before", "during"):
+        return ""
+    else:
+        return "at "
+
 if len(sys.argv) != 2:
     print("Error: Exactly one argument is required.", file=sys.stderr)
     print("Usage: " + sys.argv[0] + " 'text to anonymize'", file=sys.stderr)
@@ -37,14 +69,14 @@ location_IDs = {}
 email_IDs    = {}
 ip_IDs       = {}
 
-# Indices starting at 1 for each category of PII
-name_index     = 1
-date_index     = 1
-ssn_index      = 1
-phone_index    = 1
-location_index = 1
-email_index    = 1
-ip_index       = 1
+# Indices starting at A for each category of PII
+name_index     = ord('A')
+date_index     = ord('A')
+ssn_index      = ord('A')
+phone_index    = ord('A')
+location_index = ord('A')
+email_index    = ord('A')
+ip_index       = ord('A')
 
 # Assigns a unique ID to all instances of each unique identifier
 # then creates a custom anonymizer operator for ID
@@ -67,8 +99,9 @@ for result in recognizer_results:
             if date not in date_IDs:
                 date_IDs[date]  = date_index
                 date_index     += 1
+                augment = get_time_augment(result, prompt_text)
                 operators[date] = OperatorConfig(operator_name="replace",
-                                                 params={"new_value": f"Time {date_IDs[date]}"})
+                                                 params={"new_value": f"{augment}Time {date_IDs[date]}"})
 
         case "US_SSN":
             ssn = prompt_text[result.start:result.end]
@@ -94,8 +127,9 @@ for result in recognizer_results:
             if location not in location_IDs:
                 location_IDs[location] = location_index
                 location_index        += 1
-                operators[location]    = OperatorConfig(operator_name="replace",
-                                                        params={"new_value": f"Location {location_IDs[location]}"})
+                augment = get_time_augment(result, prompt_text)
+                operators[date] = OperatorConfig(operator_name="replace",
+                                                 params={"new_value": f"{augment}Date {chr(date_IDs[date])}"})
 
         case "EMAIL_ADDRESS":
             email = prompt_text[result.start:result.end]
