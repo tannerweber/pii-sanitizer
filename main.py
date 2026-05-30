@@ -128,7 +128,7 @@ for result in recognizer_results:
                 location_IDs[location] = location_index
                 location_index        += 1
                 operators[location] = OperatorConfig(operator_name="replace",
-                                                 params={"new_value": f"Location {chr(date_IDs[date])}"})
+                                                 params={"new_value": f"Location {chr(location_IDs[location])}"})
 
         case "EMAIL_ADDRESS":
             email = prompt_text[result.start:result.end]
