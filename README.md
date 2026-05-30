@@ -1,6 +1,6 @@
 # PII Sanitizer
 
-This program uses Presidio to simply sanitize inputted text.
+This program uses [Presidio](https://microsoft.github.io/presidio/) to primitively sanitize inputted text using pseudonymization.
 
 ## Authors
 
