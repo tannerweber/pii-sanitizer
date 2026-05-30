@@ -1,0 +1,8 @@
+"I was seen at St. Jude’s yesterday for my Stage 2 Hypertension. Can you explain if the Lisinopril dosage my doctor, Dr. Aris, prescribed is standard?"
+"Draft a memo regarding the acquisition of CloudStream Inc. for $450M. The lead negotiator is Sarah Jenkins from our Austin office, and we need to finalize this by Friday, the 14th."
+"We are considering Elena Rodriguez for the Senior DevOps role. She currently makes $165,000 at Netflix and lives in Los Gatos. Is this competitive?"
+"I can't log into the production server at 192.168.1.45. My username is admin_jake, and I keep getting a 'timeout' error."
+"Please summarize the IEP for student ID 883920. Tommy Miller is struggling with reading comprehension in Ms. Gable’s 4th-grade class."
+"Generate a listing description for 45 Oakhaven Lane. The owner wants to highlight the new roof and the proximity to Google’s headquarters."
+"Remind me to pick up my daughter from daycare at 4:30 PM. Then, book a table for two."
+"I have $50,000 in my savings account, and I’m worried about the tax implications for my 2025 filing after moving states."
