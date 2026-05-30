@@ -3,7 +3,7 @@ import spacy
 
 nlp = spacy.load("en_core_web_md")
 
-with open("test_inputs.txt", "r") as input_files:
+with open("test_inputs.txt", "r", encoding="utf-8") as input_files:
     inputs = input_files.readlines()
 
 for original_text in inputs:
