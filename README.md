@@ -17,8 +17,8 @@ to be sanitized. The sanitized version will be printed out.
 python3 main.py "My phone number is 555-555-5555"
 ```
 
-`test.py` will run through all the examples in `test_inputs.txt`.
+`test.py` is a testing utility used to evaluate the effectiveness of the test anonymizaiton process implemented in main.py. The script reads a list of test inputs from the text file specified as an arguement. A similarity score comparing the original input with the results of the anonymizaiton process are provided for each line of input as well as a average for all inputs in a file.
 
 ``` bash
-python3 test.py
+python3 test.py test_input.txt
 ```
