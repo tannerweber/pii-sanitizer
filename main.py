@@ -77,7 +77,7 @@ recognizer_results = analyzer.analyze(text=prompt_text,
                                                 "LOCATION",
                                                 "EMAIL_ADDRESS",
                                                 "IP_ADDRESS"],
-                                      score_threshold=.8,
+                                      score_threshold=0,
                                       language='en')
 
 # Dictionaries of unmasked PII to their ID
