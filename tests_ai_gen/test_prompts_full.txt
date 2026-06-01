@@ -8,6 +8,7 @@
 'Please create a meeting agenda for a discussion between Malik Thompson and the software engineering team.'
 'Shanice Davis called customer support to dispute a charge of $842.17 that appeared on her account statement.'
 'Update the personnel record for Andre Jackson to reflect his promotion to Regional Operations Manager effective July 1st.'
+
 'Please schedule a follow-up appointment for Jamal Washington on August 14, 2026, at 2:30 PM to review his blood test results.'
 'Remind me to call Aaliyah Brooks on July 8, 2026, at 10:00 AM regarding the grant application deadline.'
 'Can you summarize the meeting notes from the discussion with DeShawn Carter that took place on March 22, 2026, at 1:15 PM?'
@@ -18,6 +19,7 @@
 'Please prepare an agenda for Andre Jackson’s onboarding meeting scheduled for April 27, 2026, at 3:00 PM.'
 'Tyesha Moore has a hearing scheduled for October 6, 2026, at 9:30 AM. Summarize the documents she needs to bring.'
 'Create a calendar invitation for Darnell Robinson to meet with the software development team on December 15, 2026, at 1:00 PM PST.'
+
 'Please update the employee record for Kwame Richardson. His Social Security number is 482-17-9364 and his mailing address recently changed.'
 'I need help completing a background check form for Nia Jefferson. Her SSN is 315-84-2719 and her date of birth is March 12, 1994.'
 'Generate a summary of the tax documents submitted by Malik Freeman, whose Social Security number is 627-53-1084.'
@@ -28,6 +30,7 @@
 'Create a customer profile for Tiana Washington using the information provided, including SSN 856-32-1147 and phone number 503-555-0184.'
 'Keisha Monroe requested a copy of her payroll records. Her employee file contains SSN 294-75-6831.'
 'Prepare a case summary for Andre Holloway. The intake form lists his Social Security number as 738-20-5416 and residence in Portland, Oregon.'
+
 'Please contact Monique Harris at (503) 555-2741 regarding the status of her application for housing assistance.'
 'Generate a customer profile for Terrence Young. His primary phone number is 971-555-6834 and he recently updated his contact preferences.'
 'Review the support ticket submitted by Jasmine Fields. She requested a callback at 503-555-9182 after 3:00 PM.'
@@ -38,6 +41,7 @@
 'Prepare an account summary for Malikah Turner. The contact information on file lists 425-555-8013 as her preferred phone number.'
 'Anthony Briggs called customer support from 971-555-1925 to report unauthorized activity on his account.'
 'Verify the contact information for Shavonne Ellis. Her emergency contact number is (503) 555-6348 and her work number is 503-555-7710.'
+
 'Please schedule a property inspection for Emily Johnson at 4827 Oak Ridge Drive, Columbus, Ohio.'
 'Generate a welcome packet for Carlos Martinez, who recently moved to 118 Harbor Street, San Diego, California.'
 'Review the service request submitted by Sarah Miller regarding a water leak at 742 Pine Avenue, Portland, Oregon.'
@@ -48,6 +52,7 @@
 'Generate a maintenance report for Ethan Davis concerning the property at 67 Cedar Lane, Nashville, Tennessee.'
 'Contact Sophia Garcia regarding the zoning application filed for 1250 Magnolia Road, Houston, Texas.'
 'Create an appointment reminder for Benjamin Lee at Lakeside Medical Center, 2100 Grand Avenue, Des Moines, Iowa.'
+
 'Please send a follow-up email to Emma Carter at emma.carter84@example.com regarding her recent customer service inquiry.'
 'Generate an onboarding checklist for Noah Thompson, whose work email address is noah.thompson@acmecorp.com.'
 'Review the support ticket submitted by Ava Rodriguez from ava.rodriguez17@gmail.com and summarize the reported issue.'
@@ -58,6 +63,7 @@
 'Prepare a case summary for Jacob Walker, who can be reached at jacob.walker@consultinggroup.net.'
 'Contact Mia Hernandez at mia.hernandez55@example.org to confirm her attendance at the annual conference.'
 'Generate a password reset notification for Benjamin Clark and send it to benjamin.clark@healthpartners.com.'
+
 'Please investigate the failed login attempts originating from IP address 192.168.14.27 that were detected on the corporate network.'
 'Generate a security incident report for traffic observed from 10.45.22.103 during the maintenance window.'
 'Review the firewall logs associated with 172.16.8.54 and identify any unusual connection patterns.'
