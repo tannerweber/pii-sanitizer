@@ -17,6 +17,14 @@ After
 * Ben Mortiz
 * Xavier Izard
 
+## Setup
+
+Dependencies can be found in `requirements.txt`.
+Perform
+``` bash
+pip install -r requirements.txt
+```
+
 ## Usage
 
 `main.py` accepts a single argument that is a string containing the text input
