@@ -1,7 +1,10 @@
 from presidio_anonymizer import AnonymizerEngine
-from presidio_anonymizer.entities import RecognizerResult, OperatorConfig
+from presidio_anonymizer.entities import OperatorConfig
 from presidio_analyzer import AnalyzerEngine
+from presidio_analyzer.nlp_engine import NlpEngineProvider
+from presidio_analyzer.context_aware_enhancers import LemmaContextAwareEnhancer
 import sys
+
 
 # Checks for prepositions relating to fixed times and adds one where needed to maintain grammatical correctness
 def get_time_augment(result, text):
@@ -35,6 +38,7 @@ def get_time_augment(result, text):
     else:
         return "at "
 
+
 if len(sys.argv) != 2:
     print("Error: Exactly one argument is required.", file=sys.stderr)
     print("Usage: " + sys.argv[0] + " 'text to anonymize'", file=sys.stderr)
@@ -43,8 +47,24 @@ if len(sys.argv) != 2:
 # Prompt text to be anonymized
 prompt_text = sys.argv[1]
 
+nlp_config = {
+    "nlp_engine_name": "spacy",
+    "models": [
+        {"lang_code": "en", "model_name": "en_core_web_trf"},
+    ],
+}
+
+provider = NlpEngineProvider(nlp_configuration=nlp_config)
+custom_nlp_engine = provider.create_engine()
+
 # Anonymizer and Analyzer engine initialization
-analyzer = AnalyzerEngine()
+analyzer = AnalyzerEngine(
+    nlp_engine=custom_nlp_engine,
+    supported_languages=["en"],
+    context_aware_enhancer=LemmaContextAwareEnhancer(
+        context_similarity_factor=0.35, min_score_with_context_similarity=0.4
+    )
+)
 anonymizer = AnonymizerEngine()
 
 # Call to analyzer to determine indecies of PII
@@ -149,9 +169,11 @@ for result in recognizer_results:
                                                params={"new_value": f"IP Address {chr(ip_IDs[ip])}"})
 
 # Anonymize the passed prompt using the results from recognizer and custom operators
-results = anonymizer.anonymize(text=prompt_text,
-                              analyzer_results=recognizer_results,
-                              operators=operators)
+results = anonymizer.anonymize(
+    text=prompt_text,
+    analyzer_results=recognizer_results,
+    operators=operators
+)
 
 # Output just anonymized text to console
 print(results.text)
