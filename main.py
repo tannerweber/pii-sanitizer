@@ -12,11 +12,11 @@ def get_time_augment(result, text):
         return "at "
     elif text[result.start - 2] == '.':
         return "At "
-    elif result.start == 3 and text[result.start - 3:result.start - 1].strip().lower() in ("in", "on", "at", "of"):
+    elif result.start == 3 and text[result.start - 3:result.start - 1].strip().lower() in ("in", "on", "at", "of", "by"):
         return ""
     elif result.start < 4:
         return "at "
-    elif text[result.start - 4:result.start - 1].strip().lower() in ("in", "on", "at", "of"):
+    elif text[result.start - 4:result.start - 1].strip().lower() in ("in", "on", "at", "of", "by"):
         return ""
     elif result.start < 6:
         return "at "
